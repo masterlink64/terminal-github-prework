@@ -1,0 +1,41 @@
+Part 1
+1). What does git clean do?
+  - use to deal with an untracked or unmarked file!
+  - "git clean -df" will remove files from the working directory
+
+2). -d will remove untracked directories in addition to untracked files.
+    -f flag with clean will "git clean" will not delete files or directories unless given -f
+
+3). What git command creates a branch?
+  - "git checkout -b NAME_OF_BRANCH"
+4) What is the difference between a fast-forward and recursive merge?
+  - a fast-forward merge will merge two branches if they do not have any conflict
+   * when git can easily tell when the commits happened and "put" one set of commits on top of     another chronologically
+  - a recursive merge is when different commits happen at different times on two branches.  Git can not easily determine the order.  This is when a merge conflict happens 
+
+5)  What git command changes to another branch?
+- "git checkout NAME_OF_BRANCH"
+
+6) How do you remove modified or deleted files from the working directory?
+- "git checkout"
+
+7) What git command deletes a branch?
+- "git branch -D"
+
+8). What does the git diff command do?
+-  it should show you the difference between two different commits, you can choose how it is shown either with VIM or opendiff (open diff looks and feels nicer)
+
+9). How do you remove files from the staging area?
+- to remove files that has been "git add" -ed  use "git rm --cached NAME_OF_FILE"
+
+10). How do merge conflicts happen?
+- they happen when there are two commits that Git can not figure out the order of when the changes happen to the same file and can not merge easily.
+- when file or folder can not be determined by Git when merging since different commits with changes happened to the same file.
+
+Part 2
+
+* Create your own merge conflict.  
+* Use two separate branches and try to merge the two together.
+* fix the conflicts and finish merge
+
+Effectively used change merge tool to default to open diff!  A lot better than trying to use vim.
