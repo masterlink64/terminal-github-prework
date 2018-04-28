@@ -24,3 +24,17 @@ Part II
 6) option left/right, to jump between words in terminal
 
 7) control + e, to get to end of line in terminal
+
+8) control + a, to get to the beginning of the terminal
+
+9) option + delete, to delete a word in terminal
+
+10) the difference between a terminal and a shell is that the terminal is the interface to deal with the shell.  Think of how the old computers work where the terminal was a physical terminal to interact with the computer.  The shell handles the actual commands and returns the output.
+
+11). Absolute path is starting from the root directory starting with a forward slash /, followed by whatever directory we are at.  
+
+12) Relative path is just whatever directory we are currently at. Such as "cd Desktop"
+
+13) a flag can be used to modify the behavior of commands. Using "- FLAG".  3 flags we have used are: "-r" with rm, "-l" with ls, and "-a" with ls
+
+14) the -rf with rm command allows us to remove a directory with files inside of it.  
