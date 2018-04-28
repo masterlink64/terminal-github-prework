@@ -1,0 +1,27 @@
+Part 1
+
+1) export FIRST_NAME=Steve, created an environment variable called FIRST_NAME and set it to my first name.
+
+2) echo $FIRST_NAME, if we need to print an environment variable you will need a "$" sign
+
+3) echo $PATH, print out $PATH variable
+
+4) $PATH is important env variable to find programs to execute.
+
+5) You would create an environment variable in order to secure information and using a variable multiple times.
+
+6) To permanently save an environment variable you would need to modify the shell configuration file in your home directory.  Will be different depending on the shell you use.
+
+7) a process is a program on your computer that is being run.
+
+8)  ps aux, will list all processes running on your machine
+
+9)  a PID is a unique number that identifies a process, useful for when we need to stop a process.
+
+10)kill or kill -9, will terminate a process
+
+11) The difference between kill and kill -9 is that it will send a different signal to the process to kill the program.  In case wifi went back.
+
+12) -i , is a grep flag that allow for case insensitive searches.
+
+13) -B , 
