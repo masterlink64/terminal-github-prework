@@ -22,6 +22,39 @@ Part 1
 
 11) The difference between kill and kill -9 is that it will send a different signal to the process to kill the program.  In case wifi went back.
 
+grep questions- all about flags
+
 12) -i , is a grep flag that allow for case insensitive searches.
 
-13) -B , 
+13) -B , allows for certain number of lines before the match.
+
+14) -C , this flag allows for a certain number of lines around the match
+
+15) -A , allows for certain number of lines after the match 
+
+16) -w , flag allows for full word search
+
+17) -n , flag shows you the line number
+
+
+Part 2- 
+
+1) find ~/Desktop -name "learn" , find all files inside Desktop folder that have a name of "learn"
+
+2) find ~/Desktop -name "P.*" , find all files inside desktop that start with a "P"
+
+3) find ~/Desktop -name "*.txt" , find files that ends in ".txt"
+
+4) find ~/Desktop/views -name "*data*" , find files that have the name data somewhere in their filename
+
+5) grep -c "Elie" instructors.txt , this will output the number of times the word "Elie" appears
+
+6) grep -w "P.*" instructors.txt , list all matches for any full word that starts with a capital "P"
+
+7) grep -ni "z.*" instructors.txt , will list all line numbers for any full word that starts with a "z" matching upper or lower case.
+
+
+
+
+
+
