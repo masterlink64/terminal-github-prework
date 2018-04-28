@@ -1,5 +1,18 @@
 Part 1
 
-1) cd to desktop
-* mkdir GitHub 
-* 
+1) mkdir learn_git_again
+2) cd learn_git_again
+3) touch third.txt
+4) git init
+5) git add .
+6) git commit -m "adding third.txt"
+7) git log, to check out commit
+8) touch fourth.txt
+9) git add .
+10) git commit -m "adding fourth.txt"
+11) rm third.txt
+12) git add .
+13) git commit -m "removing third.txt"
+14) git log
+15) git config --global core.pager "cat"
+16) git config --global --list , will list all the global configurations for git on your machine.
