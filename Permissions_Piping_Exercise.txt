@@ -1,0 +1,30 @@
+Part I (Permissions and Links)
+
+1) touch restricted.txt
+
+2) chmod 600 restricted.txt, to change permissions so that only allow the owner to read and write using octal notation
+
+3) chmod a+rwx restricted.txt, to change permissions so that every the ability to read, write, and execute the restricted.txt file using Symbolic notation
+
+4) mkdir secret_files, cd secret_files, touch first_secret.txt and mkdir classified, cd classified, touch super_secret.txt
+
+5) chmod -R 770 secret_files, change permissions so that only owner and group can read, write, and execute used octal notation
+
+6) ln restricted.txt hard_link, created a hard link for restricted.txt called hard_link this is almost like a direct copy of a file, if the file is removed the link still exists
+
+7) ln -s secret_files/classified classified_link, symbolic link for classified folder, symbolic link WILL BREAK if path or file/folder is change or moved
+
+Part II (Piping and Redirection)
+
+Touch vegetables.txt with the given text
+
+1) sort vegetables.txt, will sort list in alphabetical order in terminal but will NOT change the original text
+
+2) wc -l vegetables.txt, will count the number of lines in vegetables.txt
+
+3) cat vegetables.txt | sort | uniq > vegetables_sorted, using piping and redirection created a file called vegetables_sorted which contains all unique legs sorted.
+
+4) cat vegetables.txt | tail -n 3 > last_three.txt, this is make a file called last_three.txt and redirect the last three lines from vegetables.txt to it
+
+5) cat vegetables.txt | grep "Broccoli" | wc -l, will count the number of lines that "Broccoli" appears in vegetables.txt
+
