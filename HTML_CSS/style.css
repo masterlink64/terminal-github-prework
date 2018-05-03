@@ -1,0 +1,39 @@
+#container {
+    font-size: 16px;
+}
+.main_heading {
+    background-color: grey;    
+}
+.main {
+    background-color: blue;
+}
+.main_footer {
+    background-color: green;
+}
+.main_header, 
+.main_footer {
+  color: red;
+}
+footer p {
+    background:red;
+}
+h1+h4 {
+    background:blue;
+}
+ul > li {
+    background:yellow;
+}
+a[href="#"] {
+    background:blue;
+}
+li:nth-child(2) {
+    background: teal;
+}
+body {
+    font-family: 'Open Sans', sans-serif;    
+}
+
+div {
+    box-sizing: border-box;
+    border-radius: 100000px;
+}

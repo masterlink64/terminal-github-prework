@@ -1,0 +1,14 @@
+body{
+    background: lightblue;
+    width: 800px;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+/* this will bold only the first letter of the list*/
+ul li::first-letter {
+    font-weight:bold;
+    font-size: 20px;
+}

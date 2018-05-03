@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: black;
+    background: rgb(96, 151, 96);
+}
+#wrap {
+    width: 750px;
+    margin: 0 auto;
+    background: yellowgreen;
+}
+#header {
+    background: beige;
+    padding:30px;
+    text-align: right;
+}
+#nav {
+    background:#c99;
+    padding:5px 10px;
+    }
+/* to create illusion of column I used same color as the #wrap */    
+#sidebar {
+    background: yellowgreen;
+    float:right;
+    width:230px;
+    padding:10px;
+}
+#footer {
+    background:#cc9;
+    clear: both;
+    padding:5px 10px;
+}
+#content {
+    background:#9c9;
+    float:left;
+    width:480px;
+    padding:10px;
+}
+#content li{
+    list-style: none;
+    text-align: center;
+}
+/* these next two nav selectors will have add a horizontal nav bar*/
+#nav ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+#nav li {
+    display:inline;
+    margin:0;
+    padding:0;
+}
+h1 {
+    margin:0;
+}
+
+#footer p {
+    margin:0;
+    }

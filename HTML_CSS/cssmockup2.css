@@ -1,0 +1,32 @@
+.container {
+    margin: 5px;
+    width: 100%
+    
+}
+div, header{
+    display: inline-block;
+}
+header{
+    width: 92%;
+    background: purple;
+    height: 120px;
+}
+header, .left, .right, .middle{
+    border: 5px solid black;
+}
+.left{
+    background: lightcoral;
+    width: 30%;
+    height: 500px;
+    
+}
+.middle{
+    background: lightgreen;
+    width: 30%;
+    height: 500px;
+}
+.right{
+    background: orange;
+    width:30%;
+    height: 500px;
+}
