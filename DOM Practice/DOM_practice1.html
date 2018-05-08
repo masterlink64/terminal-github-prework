@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- make sure for now that your script tag is in the head -->
+    <title>Document</title>
+</head>
+<body id= "container">
+    <div class="hello">
+        Hello World
+    </div>
+    <div class="hello">
+        Hello Everyone!
+    </div>
+    <a href="#">This link goes nowhere!</a>
+    <button>Click me!</button>
+    <script>
+        // you can put your JavaScript in here, or include an external file.
+        // this selects a SINGLE element using their "id" 
+        var container = document.getElementById("container");
+        // var container = document.querySelector("#container"); uses CSS selectors
+        
+// this selects multiple elements
+        var divs = document.getElementsByTagName("div");
+        // querySelector/querySelectorAll uses CSS selectors
+        var divsWithClassOfHello = document.querySelectorAll(".hello");
+        
+        // both will change text of an element through either innerHTML property or innerText property
+        // difference between the two is that innerHTML retrieves and sets the content in HTML format
+        // innerText retrieves and sets content of the tag as plain text
+        var firstDiv = document.getElementsByTagName("div")[0];
+        
+        firstDiv.innerHTML = "Just changed!";
+        // We can also directly manipulate the CSS properties for elements (through inline styling) with the style property.
+        firstDiv.style.color = "red";
+        firstDiv.style.backgroundColor = "teal";
+
+        var secondDiv = document.getElementsByTagName("div")[1];
+        
+        secondDiv.innerText = "Just changed Again!";
+        // We can also add and remove classes to elements using classList
+
+        secondDiv.classList; // ["hello"]
+        secondDiv.classList.add("another_class");
+        secondDiv.classList; // ["hello", "another_class"]
+        secondDiv.classList.remove("hello");
+        secondDiv.classList; // [another_class"]
+
+        // If we want to access/modify attributes on elements, we can do that with getAttribute and setAttribute:
+        var body = document.getElementById("container");
+
+        // body.getAttribute("id"); // "container"
+        // body.setAttribute("id", "new_container");
+        // body.getAttribute("id"); // "new_container"
+// traversing the DOM
+        var container = document.getElementById("container");
+        container.childNodes; // // this contains all of the nodes (including text nodes) that are children
+        container.childNodes.length; // 11
+        container.children; // this contains all of the elements that are children of the element we have selected
+        container.children.length; // 5
+
+        var link = document.querySelector("a");
+        link.parentElement; // <body id="container">...</body>
+        link.previousElementSibling; // <div class="hello">Hello Everyone!</div>
+        link.previousSibling; // text node
+        link.nextSibling; // text node
+        link.nextElementSibling; // <button>​Click me!​</button>​
+
+// creating elements: To create elements we use the .createElement function on the document object 
+        // and pass in a string with the name of the element that we would like to create. This will just return a new HTML element without any text/attributes or placement on the page!
+        var newDiv = document.createElement("div");
+
+        // So now that we created this element, how do we place it on the page?
+        // Appending Elements
+        var button = document.createElement("button");
+        button.innerText = "I am a button created with JavaScript!";
+        
+        var container = document.getElementById("container");
+        container.appendChild(button);
+
+// Removing Elements
+        // this will search element of a
+        var linkToBeRemoved = document.querySelector("a");
+
+        var container = document.getElementById("container");
+        // will remove the child of the element anchor, which in this case is the link that leads to nowhere
+        container.removeChild(linkToBeRemoved);
+
+// CHANGING MULTIPLE elements, will require a loop!!!
+        // what is error?
+        var divs = document.querySelectorAll("div");
+        // divs.style.backgroundColor = "red"; // this will not work, try to understand the error you receive!
+
+        // we have to use a loop for each one instead.
+        for (var i = 0; i < divs.length; i++) {
+            divs[i].style.backgroundColor = "red"; // this will work!
+        }   
+    </script>
+</body>
+</html>

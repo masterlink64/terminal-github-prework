@@ -1,0 +1,31 @@
+
+h1{
+    padding-top: 1em;
+}
+.btn {
+    transition: background-color .5s ease;
+}
+.btn:hover {
+    background-color:orange;
+    color: black;
+    border-radius: 30px;
+}
+.container .row{
+    padding-top: 1em;
+}
+.col{
+    height: 500px;
+}
+.pictures{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/* this allows for the images to be centered inside my bootstrap column */
+.pictures img {
+    display: block;
+    margin: auto;
+}
+.col header{
+    text-align: center;
+}
