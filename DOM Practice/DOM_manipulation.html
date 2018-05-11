@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>DOM Manipulation Practice</title>
 </head>
 <body>
     <div class="header">
@@ -27,7 +27,32 @@
         var sectionAgain = document.querySelector("#container");
         // selecting multiple elements
         var classSecond = document.querySelectorAll(".second");
-        
+        // select item with a class of third, but only the list item inside of the ol tag
+        var thirdOl = document.querySelector("ol .third");
+        // var thirdOl = document.getElementsByTagName("ol" ".third");
+
+        // changing text, give the section with an id of container the text "Hello"!
+        var container = document.querySelector("#container");
+        container.innerText = "Hello!";
+        // selecting classes and adding and removing classes
+        var footer = document.querySelector(".footer");
+        footer.classList.add("main");
+        footer.classList.remove("main");
+        // create new element, a new li element
+        var newLi = document.createElement("li");
+        newLi.innerHTML = "4, random li element";
+        // try to apprend to ul element
+        var ul = document.querySelector("ul");
+        ul.appendChild(newLi);
+
+        // loop over all the li s inside the ol tag and give them a background color of "green"
+        var ol = document.querySelectorAll("ol li");
+        for (var i = 0; i < ol.length; i++) {
+            ol[i].style.backgroundColor = "green";
+        }
+
+        var footer = document.querySelector(".footer");
+        footer.remove();
     </script>
 </body>
 </html>

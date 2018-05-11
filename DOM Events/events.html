@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro to Events</title>
+</head>
+<body>
+    <button class="first_button">Click me first!</button>
+    <button class="second_button" >Click me second!</button>
+    <button class="third_button">Click me third!</button>
+    <script>
+// // Option 1: - directly in HTML. Note that in your HTML, 
+// // the first button makes reference to a function called firstClick 
+// // in the onclick attribute
+// function firstClick(){
+//     alert("you clicked the first button!");
+// }
+
+// // Option 2 - attach the function to the element
+// var secondButton = document.querySelector('.second_button');
+// secondButton.onclick = function(){
+//     alert("you clicked the second button!");
+// }
+// // Option 3 - use addEventListener
+// var thirdButton = document.querySelector('.third_button');
+// thirdButton.addEventListener("click", function(){
+//     alert("you clicked the third button!");
+// });
+
+
+var buttons = document.getElementsByTagName("button");
+
+// this will NOT work - what kind of error do you get?
+// buttons.addEventListener("click", function(){
+//     alert("You just clicked a button");
+// });
+
+// we have to add the event listener to each button
+// for(var i=0; i<buttons.length; i++){
+//     buttons[i].addEventListener("click", function(){
+//         alert('You just clicked on a button!');
+//     });
+// }
+
+// if we want to remove an event listener our funciton must have a name!
+
+// In order to remove, we have to name our function before adding it instead of adding an anonymous function
+function alertData(){
+    alert("You just clicked a button");
+}
+
+for(var i=0; i<buttons.length; i++){
+    buttons[i].addEventListener("click", alertData);
+}
+
+// since we have named our function, we know which one to remove
+for(var i=0; i<buttons.length; i++){
+    buttons[i].removeEventListener("click", alertData);
+}
+</script>
+</body>
+</html>
