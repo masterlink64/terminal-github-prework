@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Steve's Meme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|PT+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to Steve's Memes</h1>
+            <p>Make your own memes below!!!</p>
+        </div>
+        <!-- action and method is required action is where the data will be sent
+        if none is stated will send data to the page containing the form.  '#' is not required anymore for html5.
+        method is how the data is sent, get or post, get will send data in url bar and post will send seperately and will not display, more secure -->
+        
+        <!-- need a name attribute for input that is used in JS or to reference form data AFTER a form is submitted-->
+        <div class="form">
+        <form method="post">
+            <div class="form-group">
+                <label for="meme">Image URL</label>
+                <input type="text" class="form-control" id="meme" name="meme" value="" placeholder="What's the URL for your meme image?">
+            </div>
+            <div class="form-group">
+                <label for="toptext">Text on Top</label>
+                <input type="text" class="form-control" id="toptext" name="toptext" placeholder="(Optional) What text do you want at the top of the meme?">
+            </div>
+            <div class="form-group">
+                <label for="bottomtext">Text on Bottom</label>
+                <input type="text" class="form-control" id="bottomtext" name="bottomtext"placeholder="(Optional) What text do you want at the bottom of the meme?">
+            </div>
+            <button type="submit" class="btn btn-primary" id="button">Create Meme</button>
+        </form>
+        </div>
+        <br>
+    </div>
+
+</body>
+<script>
+    // wait for DOM to load
+    document.addEventListener("DOMContentLoaded", function(){
+        var button = document.getElementById("button");
+        // .value is a property of the form element that allows you to get the value of input?
+        // var link = document.getElementById("meme").value; <-- a link out here WILL NOT WORK
+
+        function displayImage(event) {
+            var newDiv = document.createElement("div");
+            newDiv.className="newDiv";
+            var img = document.createElement("img");
+            var link = document.getElementById("meme").value;
+            // img.addEventListener("click", function(event){
+            //     //img.remove();
+            //     console.log("remove");
+            // })
+            // need to add text, set variable for top and bottom texts
+            var top = document.getElementById("toptext").value;
+            var bot = document.getElementById("bottomtext").value;
+            // create text node or should i create element and then add text to that???
+            var topdiv = document.createElement("div");
+            topdiv.textContent = top;
+            topdiv.className = "toptext caption";
+            var botdiv = document.createElement("div"); 
+            botdiv.textContent=bot;
+            botdiv.className = "bottext caption";
+            
+            // prevent default stops page from submitting as it is the default action
+            event.preventDefault();
+            // how to get URL/image source? 
+            // stage.innerText = "test"
+            img.src = link;
+            img.width = 450;
+            img.height = 300;
+            
+            // image not suppose to have child
+            newDiv.appendChild(topdiv);
+            newDiv.appendChild(botdiv);
+            newDiv.appendChild(img);
+            document.body.appendChild(newDiv);
+            // trying to append text to image but it's not showing up???
+            
+            // clears out input from forms after click
+            document.getElementById("meme").value="";
+            document.getElementById("toptext").value="";
+            document.getElementById("bottomtext").value="";
+            // image does not load right away! div are added right away!
+
+            newDiv.addEventListener("click", function(event){
+                document.body.removeChild(newDiv);
+            });
+
+            newDiv.addEventListener("mouseover", function(event){
+                img.style.opacity = "0.5";
+            });
+
+            newDiv.addEventListener("mouseleave", function(event){
+                img.style.opacity = "1";
+            })
+            
+        }
+
+        button.addEventListener("click", displayImage);
+        // add event listener for clicking on image to remove
+        
+    });
+</script>
+</html>

@@ -2,10 +2,61 @@
     max-width: 600px;
     margin: 0 auto;
     box-sizing: border-box;
+    background-color: lightslategray;
 }
 
 .header {
     /* play around with display later */
     display: block;
     justify-content: center;
+    font-family: 'Bungee Shade', cursive;
 } 
+
+img {
+    z-index: -1;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    padding: 2em;
+    /* width: 100%; relative screen size */
+}
+
+.caption {
+    /* absolute will be positioned relative to their nearest positioned parent */
+    position: absolute;
+    vertical-align: bottom;
+    padding-left: 3.5em;
+    text-align: center;
+    font-family: Impact;
+    margin: 0 auto;
+    color: white;
+    font-size: 3em;
+    text-shadow:
+          -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+}
+
+.toptext {
+    position: absolute;
+    top: 10%;
+}
+
+.bottext {
+    position: absolute;
+    bottom: 10%;
+}
+
+.newDiv {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    /* width: 50%; for relative screens */ 
+}
+
+.form {
+    font-family: 'PT Serif', serif;
+}
+
+body {
+    background-image: url("https://www.scribblefun.com/wp-content/uploads/2018/02/Pusheen-Coloring-Images.png");
+    background-repeat: repeat-x;
+}
