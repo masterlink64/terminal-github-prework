@@ -1,0 +1,87 @@
+
+body {
+    display: block;
+}
+
+.control-panel {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.container {
+    width: 21%;
+    margin: 2%;
+    height: 200px;
+    position: relative;
+    perspective: 800px;
+  }
+
+/* create a game board */
+.gameboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 55%;
+    margin: 0 auto;
+  }
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+/* css to back card flip */
+.card.flipped {
+    transform: rotateY(180deg);
+  }
+
+.card div {
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card .front {
+    background: url('img/pokemon.png');
+    background-size: cover;
+    background-position: center;
+}
+  
+.card .back {
+    background: url('#');
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+}
+
+/* need to create a pop up for end game */
+/* winner is the content the endMenu is the background */
+#winner {
+    background-color: lightskyblue;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+}
+.endMenu {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1; /* Sit on top */
+    /* padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); 
+}

@@ -1,0 +1,25 @@
+.flex-grid {
+    display: inline-flex;
+  }
+.col {
+    flex: 1;
+    background: turquoise;
+    height: 100px; 
+    width: 100px;
+    margin: 5px;
+}
+
+@media (max-width: 400px) {
+    .flex-grid {
+        display: block;
+    }
+}
+
+/* could add margins to columns or padding. using justification to create the columns */
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-grid-thirds .col {
+  width: 32%;
+}
