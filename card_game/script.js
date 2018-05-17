@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function(){
             card[i].querySelector(".back").style.backgroundImage = gif2[i];
             card[i].addEventListener("click", flip);
         }
+        // suppose to anchor and move to this location on screen when startbutton is clicked  does not work why???
         window.location.hash = "board";
     }
 
@@ -67,8 +68,11 @@ document.addEventListener("DOMContentLoaded", function(){
         flippedCards.push(this);
         // remove event listener for flipped cards for now
         // add it back on later when checking for matched cards
-        for (var i = 0; i < flippedCards.length; i++) {
+        // need to add conditional to only remove the cards that are flipped otherwise bugs will arise from clicking too fast
+        if (this.classList.contains("flipped")) {
+            for (var i = 0; i < flippedCards.length; i++) {
             flippedCards[i].removeEventListener("click", flip);
+            }
         }
         // if 2 cards are flipped check if they are matching!  use another function to check
         if (flippedCards.length === 2) {
