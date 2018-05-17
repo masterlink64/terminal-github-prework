@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function(){
             card[i].querySelector(".back").style.backgroundImage = gif2[i];
             card[i].addEventListener("click", flip);
         }
+        window.location.hash = "board";
     }
 
     function flip() {
@@ -105,6 +106,12 @@ document.addEventListener("DOMContentLoaded", function(){
             winner.style.display = "flex";
             endContainer.style.display = "flex";
             yourScore.innerText = "Your score: " + score.innerHTML;
+            // in order to close popup
+            var close = document.querySelector(".closePopup");
+            close.addEventListener("click", function() {
+                winner.style.display = "none";
+                endContainer.style.display = "none";
+            })
             // how to save score in localStorage????
 
             // if (score.innerHTML < highScore.innerHTML) {

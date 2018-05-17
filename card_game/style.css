@@ -1,17 +1,51 @@
 
 body {
     display: block;
+    background: url("img/background.jpg");
+}
+h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 0;
+    font-style: oblique;
+    color: darkblue;
+}
+
+h2, h3, button, div {
+    font-family: 'Roboto Mono', monospace;
+}
+button {
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #FF7851;
+    border-color: #FF7851;
+}
+button:hover {
+    color: #fff;
+    background-color: #ff5a2b;
+    border-color: #ff501e;
+}
+#highText {
+    color: gold;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.currentScore {
+    font-weight: bold;
+    color: red;
 }
 
 .control-panel {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
+    padding-bottom: 3em;
 }
 
 .container {
-    width: 21%;
+    width: 146px;
     margin: 2%;
     height: 200px;
     position: relative;
@@ -23,7 +57,8 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 55%;
+    width: 696px;
+    height: 912px;
     margin: 0 auto;
   }
 
@@ -84,4 +119,16 @@ body {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.4); 
+}
+
+.closePopup {
+    position: absolute;
+    top: 20%;
+    right: 25%;
+}
+
+@media (max-width: 500px) {
+    .gameboard {
+        width: 50%;
+    }
 }
